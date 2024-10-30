@@ -9,4 +9,3 @@ print(b)
 c = np.zeros((2,3), dtype=np.int32)
 print("Zero array", c.shape)
 print(c)
-
