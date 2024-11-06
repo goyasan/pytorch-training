@@ -3,7 +3,7 @@ from torch.nn import Module
 
 class ExerciseModel(Module):
 
-    def __init__(self, mytensor, elem_add, elem_multiply):
+    def __init__(self, mytensor : torch.Tensor, elem_add : int, elem_multiply : int):
         super().__init__()
         self.mytensor = mytensor
         self.elem_add = elem_add
