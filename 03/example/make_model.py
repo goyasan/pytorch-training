@@ -2,7 +2,7 @@ import torch
 from torch.nn import Module
 
 class MyModel(Module):
-    
+
     def __init__(self, arg1: int, arg2: str):
         super().__init__()
         self.arg1 = arg1
@@ -10,7 +10,7 @@ class MyModel(Module):
 
     def forward(self, x):
         return x
-
+    
 if __name__=="__main__":
     # インスタンス作成
     mymodel = MyModel(arg1=1234, arg2="tus")
