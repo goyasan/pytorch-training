@@ -3,20 +3,25 @@ from torch import nn
 
 
 if __name__=="__main__":
-    _in = torch.ones((32, 3, 128, 128))
+    tensor = torch.ones(32,3,128,128)
+    print("演習1,1")
+    print(torch.Tensor.size(tensor))
 
-    conv1 = nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3)
-    print("===== problem1 =====")
-    print(repr(conv1(_in).size()))
+    print("演習1,2")
+    conv = nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3)
+    tensor2 = conv(tensor)
+    print(torch.Tensor.size(tensor2))
 
+    print("演習1,3")
     conv2 = nn.Conv2d(in_channels=3, out_channels=256, kernel_size=3, stride=2, padding=1)
-    print("===== problem2 =====")
-    print(repr(conv2(_in).size()))
+    tensor3 = conv2(tensor)
+    print(torch.Tensor.size(tensor3))
 
+    print("演習1,4")
     conv3 = nn.Conv2d(in_channels=3, out_channels=64, kernel_size=5, padding=1)
-    print("===== problem1 =====")
-    print(repr(conv3(_in).size()))
+    tensor4 = conv3(tensor)
+    print(torch.Tensor.size(tensor4))
 
     conv4 = nn.Conv2d(in_channels=3, out_channels=256, kernel_size=5, stride=2, padding=2)
-    print("===== problem2 =====")
-    print(repr(conv4(_in).size()))
+    tensor5 = conv4(tensor)
+    print(torch.Tensor.size(tensor5))

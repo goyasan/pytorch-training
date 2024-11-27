@@ -3,25 +3,18 @@ from torch import nn
 
 
 if __name__=="__main__":
+    tensor = torch.ones(32,1024)
+    print("演習2,1")
+    print(torch.Tensor.size(tensor))
 
-    # problem 1
-    _in = torch.ones((32, 1024))
-    print("===== problem 1 =====")
-    print(repr(_in.size()))
+    print("演習2,2")
+    ans2 = nn.Linear(in_features=1024, out_features=256, bias=True)
+    print(torch.Tensor.size(ans2(tensor)))
 
-    # problem 2
-    fc = nn.Linear(in_features=1024, out_features=256)
-    out = fc(_in)
-    print("===== problem 2 =====")
-    print(repr(out.size()))
+    print("演習2,3")
+    ans3 = nn.Linear(in_features=1024, out_features=2048, bias=True)
+    print(torch.Tensor.size(ans3(tensor)))
 
-    # problem 3
-    fc2 = nn.Linear(in_features=1024, out_features=2048)
-    print("===== problem 3 =====")
-    print(repr(fc2(_in).size()))
-
-    # appendix
-    print("===== appendix =====")
-    print(repr(out.view(-1, 16, 16).size()))
-    # just in case
-    # print(repr(out.contiguous().view(-1, 16, 16).size()))
+    print("演習2,おまけ")
+    omake = ans2(tensor)
+    print(torch.Tensor.size(omake.view(32,16,16)))
