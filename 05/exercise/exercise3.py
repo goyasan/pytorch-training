@@ -35,7 +35,7 @@ class MyDataset(Dataset):
     
 
 if __name__ == "__main__":
-    my_dataset = MyDataset("./data")
+    my_dataset = MyDataset("./05/exercise/data")
     img, label = my_dataset[0]
     print("===== problem1.1 =====")
     print(img.size())
