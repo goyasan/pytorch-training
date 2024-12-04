@@ -9,15 +9,14 @@ class ImageTransform():
     def __init__(self, resize, mean, std):
         self.data_transform = {
             'train': transforms.Compose([
-                transforms.RandomResizedCrop(
-                    resize, scale=(0.5, 1.0)), 
+                transforms.RandomResizedCrop(resize, scale=(0.5, 1.0)),
                 transforms.RandomHorizontalFlip(),
-                transforms.ToTensor(), 
-                transforms.Normalize(mean, std)
+                transforms.ToTensor(),
+                transforms.Normalize(mean, std)   
             ]),
             'val': transforms.Compose([
-                transforms.Resize(resize), 
-                transforms.ToTensor(),  
+                transforms.Resize(resize),
+                transforms.ToTensor(),
                 transforms.Normalize(mean, std)
             ])
         }
@@ -48,7 +47,7 @@ class MyDataset(Dataset):
 
 if __name__ == "__main__":
 
-    data_directory = "../../05/exercise/data"
+    data_directory = "./05/exercise/data"
     data_directory_path = Path(data_directory).resolve()
     dir_list = sorted(list(data_directory_path.glob("*")))
     file_list = []
